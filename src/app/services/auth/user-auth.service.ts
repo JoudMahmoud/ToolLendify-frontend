@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  catchError,
+  map,
+  Observable,
+  tap,
+  throwError,
+} from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
@@ -29,20 +36,31 @@ export class UserAuthService {
     const loginData = { email, password, rememberMe };
     return this.httpClient.post<any>(`${this.url}/login`, loginData).pipe(
       map((response) => {
+        console.log('jj');
         const userToken = response.token;
+
         if (userToken) {
-          localStorage.setItem('token', userToken);
+          if (rememberMe) {
+            localStorage.setItem('token', userToken);
+          } else {
+            sessionStorage.setItem('token', userToken);
+          }
           this.isLoggedSubject.next(true);
         }
-
+      }),
+      catchError((err) => {
+        console.log('joud login failed'); //it catch this error
+        console.error('Login error: ', err);
+        return throwError(
+          () => new Error('Login failed. Please check your credentials.')
+        );
       })
     );
   }
 
-
-
   Logout() {
     localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
     this.isLoggedSubject.next(false);
   }
 

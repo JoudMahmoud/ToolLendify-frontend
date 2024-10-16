@@ -11,7 +11,6 @@
       name="searchValue"
     />
   </form>
-  <!-- (click)="" -->
   <button class="me-4 btn-reset" (click)="resetSearch()">Reset</button>
 </div>
 
@@ -30,19 +29,14 @@
 <!-- Tab Content Section -->
 <div class="tab-content" *ngIf="selectedTab === 0">
   <!-- <p>Content for Tab 1</p> -->
-  <div class="container d-flex">
-    <div
-      class="card"
-      *ngFor="let item of toolList"
-      style="width: 18rem"
+  <div class="container row  ">
+    <div  class="col-lg-3" *ngFor="let item of toolList">
+      <div
+      class="card  m-2"
+
+
       [ngClass]="item.isAvailable ? 'available' : 'un-available'"
     >
-      <!-- <p *ngIf="item.isAvailable" class="is-available py-1 px-2">{{Available}}</p> -->
-      <!--
-[ngClass]="item.isAvailable ? 'bg-green' : 'bg-orange'
-i want give card border Based on instructions this card it avaliable or not how i can do this
-
--->
       <p
         class="availability"
         [ngClass]="item.isAvailable ? 'text-success' : 'text-warning'"
@@ -50,7 +44,7 @@ i want give card border Based on instructions this card it avaliable or not how 
         {{ item.availableMessage }}
       </p>
       <img
-        src="../../../assets/images/toolBoy.png"
+        src="{{item.image}}"
         class="card-img-top"
         alt="..."
       />
@@ -64,11 +58,12 @@ i want give card border Based on instructions this card it avaliable or not how 
           class="container-price pt-3 pb-2 ps-2 d-flex justify-content-between align-items-center"
         >
           <p class="d-flex">
-            <span> EGP</span>{{item.PricePerDay }}500
+            <span> EGP</span>{{item.pricePerDay }}
           </p>
           <i class="fa fa-plus"></i>
         </div>
       </div>
+    </div>
     </div>
   </div>
 
@@ -77,7 +72,7 @@ i want give card border Based on instructions this card it avaliable or not how 
 
 <div class="tab-content" *ngIf="selectedTab === 1">
   <div class="container d-flex">
-    <div class="card" *ngFor="let item of toolList" style="width: 18rem">
+    <div class="card " *ngFor="let item of toolList" style="width: 18rem">
       <!-- <p *ngIf="item.isAvailable" class="is-available py-1 px-2">{{Available}}</p> -->
 
       <p
@@ -87,7 +82,7 @@ i want give card border Based on instructions this card it avaliable or not how 
         {{ item.availableMessage }}
       </p>
       <img
-        src="../../../assets/images/toolBoy.png"
+        src="{{item.image}}"
         class="card-img-top"
         alt="..."
       />
@@ -101,7 +96,7 @@ i want give card border Based on instructions this card it avaliable or not how 
           class="container-price pt-3 pb-2 ps-2 d-flex justify-content-between align-items-center"
         >
           <p class="d-flex">
-            <span> EGP</span>{{ item.PricePerDay }}500
+            <span> EGP</span>{{ item.pricePerDay }}500
           </p>
           <i class="fa fa-plus"></i>
         </div>

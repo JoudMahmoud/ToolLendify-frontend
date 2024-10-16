@@ -3,7 +3,6 @@
   margin: 0;
 }
 
-/* Basic input styles */
 .container-search .search {
   position: relative;
   caret-color: #008CBA;
@@ -13,7 +12,6 @@
 
 }
 
-/* On focus, change border color */
 .container-search .search:focus-within {
   border-color: #dee2e6;
   box-shadow: none;
@@ -21,17 +19,13 @@
 
 }
 
-/* Outer wrapper to contain the pseudo-element */
 .search-wrapper {
   position: relative;
-  /* transition:all .4s ease-in-out; */
 }
 
-/* Pseudo-element applied to the wrapper, not the input */
 .search-wrapper:focus-within::after {
   content: "";
   position: absolute;
-
   top: -5px;
   left: -5px;
    width: calc(100% + 10px);
@@ -56,7 +50,6 @@
 }
 /* ======================= */
 .tabrow {
-  /* text-align: center; */
   list-style: none;
   margin: 0px 0 0px 50px;
   padding: 0;
@@ -84,16 +77,14 @@
   text-align: center;
 }
 .tabrow li:first-child {
-  margin-left: 0; /* Remove negative margin from the first tab */
-  border-left: 1px solid #aaa; /* Add left border */
-  /* border-radius: 6px 0 0 6px; Adjust left border radius */
+  margin-left: 0;
+  border-left: 1px solid #aaa;
+
 }
 .tabrow button {
   color: #555;
   border: none;
   background-color: transparent;
-  /* text-decoration: none; */
-  /* width: 150px; */
 }
 
 .tabrow li.selected {
@@ -102,7 +93,7 @@
   z-index: 2;
   border-bottom-color: #fff;
 }
- /* mx-4 px-4 pb-4 */
+
 .tab-content {
   margin: 0 30px 0 30px;
   padding: 30px 20px 30px 20px;
@@ -118,9 +109,8 @@
 
 /* ======================================= */
 
-.container {
-  gap: 20px;
-}
+/* .container {
+} */
 
 .container .card {
   position: relative;
@@ -147,12 +137,6 @@
   left: 10px;
   border-radius: 4px;
   padding: 2px 4px;
-  /*background-color: rgba(0, 128, 0, .15);
-  color: rgb(0, 128, 0);
-  border-radius: 4px;
-  top: 10px;
-  left: 10px;
-  font-size: 12px; */
 }
 .container .card .text-success {
   background-color: rgba(0, 128, 0, 0.15);
@@ -167,15 +151,13 @@
   background-color: #f2f2f2;
   padding: 2px;
   border-radius: 4px 4px 0 0;
+  width: 100%;
+  max-height: 150px;
 }
 
 .container .card .card-body {
   padding: 5px;
 }
-/* .container .card h5{
-  padding: 0;
-  margin: 0;
-} */
 
 .container .card .description {
   display: -webkit-box;
@@ -191,9 +173,8 @@
   margin: 0;
 }
 .container .card i {
+
   text-decoration: none;
-  /* color: #09abdc; */
-  /* color: var(--primary-color); */
   color: var(--primary-dark-blue);
 }
 
@@ -203,6 +184,5 @@
   font-weight: bold;
 }
 .container .card .card-body .container-price p span {
-  /* padding-top: 6px; */
   font-size: 12px;
 }

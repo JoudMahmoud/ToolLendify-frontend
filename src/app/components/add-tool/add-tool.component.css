@@ -1,0 +1,159 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.container {
+  height: 100vh;
+  flex-direction: row;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    /* width: 100%; */
+    max-width: 100%;
+  }
+}
+
+/* Start aside style */
+
+.container aside {
+  border-right: 1px solid var(--primary-base-color);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto;
+}
+
+.container aside a {
+  text-decoration: none;
+  color: var(--primary-medium-gray);
+}
+/* End aside style */
+
+/* Start main style */
+
+/* End img */
+.container main {
+    flex: 1;
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+.container main .item-container {
+  margin-bottom: 20px;
+}
+
+.container main .title-item {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.container main .img-container {
+  background-color: var(--primary-base-color);
+  border: 1px dashed #ddd;
+  text-align: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.container main .img-container button {
+  border: none;
+  color: var(--primary-medium-blue);
+}
+
+.container main .img-container button span {
+  text-transform: capitalize;
+}
+/* End img */
+
+/* End name */
+
+.container main .img-container p {
+  margin: 0;
+}
+
+.container main .img-container p:last-child {
+  font-size: 13px;
+}
+.container main .img-container p span {
+  text-transform: uppercase;
+}
+.container main .img-container p span:first-child {
+  color: var(--primary-medium-gray);
+}
+.container main .item-container input {
+  box-shadow: none;
+  outline: none;
+}
+/* End name */
+/* Start description */
+.container main .item-container textarea {
+  height: 80px;
+  resize: none;
+  line-height: 1.5;
+  outline: none;
+}
+
+.container main .item-container input,
+.container main .item-container textarea {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  caret-color: var(--primary-medium-blue);
+}
+
+.container main .item-container input::placeholder,
+.container main .item-container textarea::placeholder {
+  color: var(--primary-medium-gray);
+}
+
+.container main .item-container input:focus,
+.container main .item-container textarea:focus {
+  /* border-color: var(--primary-medium-blue); */
+  border-color: var(--primary-medium-blue);
+}
+
+/* End description */
+
+/* Start slary & model section */
+.container main .title-item span {
+  text-transform: lowercase;
+}
+.container main .slary-model {
+  gap: 30px;
+}
+.container main .slary-model div {
+  /* flex-grow: 1; */
+  width: 100%;
+}
+.container main .slary-model div input {
+  /* width: calc(100% - 15px); */
+  width: 100%;
+}
+.container main .slary-model div input:last-child {
+  align-self: flex-end;
+}
+
+/* End slary & model section */
+
+
+/* Start category section  */
+.cat-container{
+  position: relative;
+}
+.cat-container .cat-option{
+/* position: absolute;
+top: 50%;
+left: 50%; */
+}
+.cdk-overlay-container {
+ z-index: 1050; /* Adjust to make sure it's on top of other elements */
+  position: fixed;
+}
+/* End category section  */
+/* End main style */

@@ -34,6 +34,8 @@ export class ToolListComponent implements OnInit {
           availableMessage: tool.isAvailable ? 'Available' : 'Unavailable',
           styleAvailable: tool.isAvailable,
         }));
+    console.log(this.toolList);
+
       },
       error: (err) => {
         console.error('Error fetching tools:', err);

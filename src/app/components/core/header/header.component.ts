@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { OwnerService } from '../../../services/owner/owner.service';
 import { Owner } from '../../../_models/owner';
 import { SharedService } from '../../../services/shared/shared.service';
+import { UserAuthService } from '../../../services/auth/user-auth.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ export class HeaderComponent {
   owners: Owner[];
   errorMassage: string;
 
-  constructor(private ownerService: OwnerService, private router: Router, private sharedService:SharedService) {
+  constructor(private ownerService: OwnerService, private router: Router, private sharedService:SharedService,private authService: UserAuthService) {
     this.searchValue = '';
     this.owners = [];
     this.errorMassage = '';
@@ -43,4 +44,11 @@ export class HeaderComponent {
       },
     });
   }
+
+  logout() {
+    this.authService.Logout();
+    this.router.navigate(['/login'])
+
+    }
+
 }
