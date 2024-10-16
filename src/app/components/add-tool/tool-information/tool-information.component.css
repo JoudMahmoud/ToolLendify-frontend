@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.title {
+  text-transform: capitalize;
+}
+.item-container {
+  margin-bottom: 15px;
+}
+.item-container .label {
+  text-transform: capitalize;
+  display: block;
+}
+.item-container .img-container {
+  padding: 20px;
+  background-color: var(--primary-base-color);
+  border: 1px dashed #ddd;
+  text-align: center;
+  border-radius: 8px;
+}
+.item-container .img-container input {
+  color: var(--primary-dark-blue);
+  border: none;
+  width: auto;
+  padding-left: 60px;
+}
+
+
+.item-container input,
+.item-container textarea {
+  border: 1px solid var(--primary-medium-gray);
+  outline: none;
+  padding: 5px;
+  caret-color: var(--primary-medium-blue);
+  border-radius: 6px;
+}
+.item-container input:focus,
+.item-container textarea:focus {
+  border-color: var(--primary-dark-blue);
+}
+.item-container input::placeholder,
+.item-container textarea::placeholder {
+  color: #b2b2b2;
+}
+.item-container textarea {
+  height: 80px;
+}
+.slary-model {
+  gap: 30px;
+}
+.slary-model div {
+  width: 100%;
+}
+.slary-model div label span {
+  text-transform: lowercase;
+}
+.slary-model div input {
+  width: 100%;
+}
+
+main .btn-category,
+main .btn-cancel,
+main .btn-back,
+main .btn-continue {
+  border-radius: 3px;
+  padding: 4px 12px;
+  transition: all 0.4s ease-in-out;
+  text-transform: capitalize;
+}
+main .btn-category,
+main .btn-cancel,
+main .btn-back {
+  background-color: #008cba;
+  color: #fff;
+  border: 1px solid #008cba;
+}
+
+main .btn-cancel:hover,
+main .btn-category:hover {
+  background-color: #d6e8fa;
+  color: #008cba;
+}
+main .btn-continue {
+  margin-left: 5px;
+  background-color: white;
+  color: #008cba;
+  border: 1px solid #008cba;
+}
+main .btn-back:hover {
+  background-color: #d6e8fa;
+  color: #008cba;
+}
+main .btn-continue:hover {
+  background-color: #d6e8fa;
+}

@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Tool } from '../../_models/tool';
-import { Category } from '../../_models/category';
-import { CategoryService } from '../../services/category/category.service';
+import { Component } from '@angular/core';
+import { CategoryService } from '../../../services/category/category.service';
+import { Category } from '../../../_models/category';
+import { Tool } from '../../../_models/tool';
 
 @Component({
-  selector: 'app-add-tool',
-  templateUrl: './add-tool.component.html',
-  styleUrl: './add-tool.component.css',
+  selector: 'app-tool-information',
+  templateUrl: './tool-information.component.html',
+  styleUrl: './tool-information.component.css',
 })
-export class AddToolComponent implements OnInit{
+export class ToolInformationComponent {
   addTool: Tool;
   categories: Category[];
 
@@ -38,9 +38,9 @@ export class AddToolComponent implements OnInit{
     };
     this.categories = [];
   }
-ngOnInit(): void {
-  this.getAllCategories();
-}
+  ngOnInit(): void {
+    this.getAllCategories();
+  }
   getAllCategories() {
     this.categoryService.getAllCategories().subscribe({
       next: (response: Category[]) => {

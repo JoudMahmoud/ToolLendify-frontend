@@ -1,3 +1,4 @@
+/*
 * {
   padding: 0px;
   margin: 0px;
@@ -12,13 +13,13 @@
 
 @media (min-width: 1200px) {
   .container {
-    /* width: 100%; */
+
     max-width: 100%;
-  }
+
 }
 
 /* Start aside style */
-
+/*
 .container aside {
   border-right: 1px solid var(--primary-base-color);
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
@@ -34,6 +35,7 @@
 /* Start main style */
 
 /* End img */
+/*
 .container main {
     flex: 1;
 }
@@ -71,7 +73,7 @@
 /* End img */
 
 /* End name */
-
+/*
 .container main .img-container p {
   margin: 0;
 }
@@ -97,7 +99,7 @@
   line-height: 1.5;
   outline: none;
 }
-
+/*
 .container main .item-container input,
 .container main .item-container textarea {
   padding: 5px;
@@ -114,13 +116,14 @@
 
 .container main .item-container input:focus,
 .container main .item-container textarea:focus {
-  /* border-color: var(--primary-medium-blue); */
+
   border-color: var(--primary-medium-blue);
 }
 
 /* End description */
 
 /* Start slary & model section */
+/*
 .container main .title-item span {
   text-transform: lowercase;
 }
@@ -128,11 +131,11 @@
   gap: 30px;
 }
 .container main .slary-model div {
-  /* flex-grow: 1; */
+
   width: 100%;
 }
 .container main .slary-model div input {
-  /* width: calc(100% - 15px); */
+
   width: 100%;
 }
 .container main .slary-model div input:last-child {
@@ -141,19 +144,30 @@
 
 /* End slary & model section */
 
-
 /* Start category section  */
+/*
 .cat-container{
   position: relative;
 }
-.cat-container .cat-option{
-/* position: absolute;
-top: 50%;
-left: 50%; */
-}
+
 .cdk-overlay-container {
- z-index: 1050; /* Adjust to make sure it's on top of other elements */
   position: fixed;
 }
 /* End category section  */
+
+/* Start Addrss section */
+/*
+.address-section .item-container input{
+  width: 25%;
+  transition: all .3s ease-in-out;
+
+}
+.address-section .item-container input:focus{
+  width: 35%;
+}
+.phone-text {
+  color: var(--primary-medium-gray);
+  font-size: 12px;
+}
+/* End Addrss section */
 /* End main style */

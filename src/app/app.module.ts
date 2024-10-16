@@ -14,7 +14,12 @@ import { FooterComponent } from './components/core/footer/footer.component';
 import { SideBarComponent } from './components/core/side-bar/side-bar.component';
 import { OwnerComponent } from './components/owner/owner.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { AddToolComponent } from './components/add-tool/add-tool.component';
+import { AddressSideBarComponent } from './components/core/address-side-bar/address-side-bar.component';
+import { AddressComponent } from './components/address/address.component';
+import { AddressInformationComponent } from './components/add-tool/address-information/address-information.component';
+import { ReviewComponent } from './components/add-tool/review/review.component';
+import { ToolInformationComponent } from './components/add-tool/tool-information/tool-information.component';
+import { AddToolLayoutComponent } from './layouts/add-tool-layout/add-tool-layout.component';
 
 @NgModule({
   declarations: [
@@ -28,16 +33,14 @@ import { AddToolComponent } from './components/add-tool/add-tool.component';
     SideBarComponent,
     OwnerComponent,
     SettingsComponent,
-    AddToolComponent,
+    AddressSideBarComponent,
+    AddressComponent,
+    ToolInformationComponent,
+    AddressInformationComponent,
+    ReviewComponent,
+    AddToolLayoutComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-
-
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })

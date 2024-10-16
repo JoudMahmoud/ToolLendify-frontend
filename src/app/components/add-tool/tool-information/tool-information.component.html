@@ -1,0 +1,101 @@
+<main class="flex-grow-1 py-3 pe-4">
+  <h4 class="title mb-3">tool information</h4>
+
+  <!-- Start img container -->
+  <div class="item-container">
+    <label class="label" for="image">image</label>
+
+    <div class="img-container w-50 text-center">
+      <i class="fa fa-upload d-block m-2"></i>
+      <!-- <button class=""><span>click</span> to upload</button> -->
+      <div class="d-flex justify-content-center">
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/png, image/jpeg, image/jpg, image/pdf"
+
+        />
+      </div>
+
+      <!-- <p class="d-inline">or drag and drop</p> -->
+      <p class="">
+        <span>pdf, jpg, jpeg, png,</span> less than <span>5mb.</span>
+      </p>
+    </div>
+  </div>
+  <!-- End img container -->
+
+  <!-- Start Name container -->
+  <div class="item-container">
+    <label class="label" for="name">name</label>
+
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Name tool"
+      class="w-50"
+    />
+  </div>
+  <!-- End Name container -->
+
+  <!-- Start description -->
+  <div class="item-container">
+    <label class="label" for="description">description</label>
+
+    <textarea
+      name="description"
+      id="description"
+      placeholder="Description tool"
+      class="w-50"
+    ></textarea>
+  </div>
+  <!-- End description -->
+
+  <!-- Start salary container -->
+  <div class="item-container slary-model d-flex justify-content-between w-50">
+    <div>
+      <label class="label" for="priceperday">price<span> per day</span></label>
+
+      <input type="text" id="priceperday" name="priceperday" />
+    </div>
+    <div>
+      <label class="label" for="model">model</label>
+
+      <input type="text" id="model" name="model" />
+    </div>
+  </div>
+  <!-- End salary container -->
+
+  <!-- Start Category section -->
+  <div class="item-container">
+      <label class="label" for="category">category</label>
+    <div class="dropdown">
+      <button
+        class="btn btn-category dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dropdown button
+      </button>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li *ngFor="let category of categories; let i = index">
+          {{ category.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-5 d-flex justify-content-between w-50">
+    <button class="btn-cancel">cancel</button>
+    <div>
+      <button class="btn-back">back</button>
+      <button class="btn-continue">continue</button>
+    </div>
+  </div>
+  <!-- Start Category section -->
+</main>

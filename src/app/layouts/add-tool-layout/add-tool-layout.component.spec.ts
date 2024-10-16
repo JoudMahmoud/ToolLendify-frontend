@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddToolComponent } from './add-tool.component';
+import { AddToolLayoutComponent } from './add-tool-layout.component';
 
-describe('AddToolComponent', () => {
-  let component: AddToolComponent;
-  let fixture: ComponentFixture<AddToolComponent>;
+describe('AddToolLayoutComponent', () => {
+  let component: AddToolLayoutComponent;
+  let fixture: ComponentFixture<AddToolLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AddToolComponent]
+      declarations: [AddToolLayoutComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddToolComponent);
+    fixture = TestBed.createComponent(AddToolLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
