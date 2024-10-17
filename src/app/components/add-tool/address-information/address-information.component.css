@@ -1,4 +1,3 @@
-/*
 * {
   padding: 0px;
   margin: 0px;
@@ -6,168 +5,103 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.container {
-  height: 100vh;
-  flex-direction: row;
+main {
+  min-height: calc(100vh - 90px) ;
+  padding: 30px;
 }
-
-@media (min-width: 1200px) {
-  .container {
-
-    max-width: 100%;
-
-}
-
-/* Start aside style */
-/*
-.container aside {
-  border-right: 1px solid var(--primary-base-color);
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
-    flex: 0 0 auto;
-}
-
-.container aside a {
-  text-decoration: none;
-  color: var(--primary-medium-gray);
-}
-/* End aside style */
-
-/* Start main style */
-
-/* End img */
-/*
-.container main {
-    flex: 1;
-}
-
-.title {
+main .title{
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
   text-transform: capitalize;
-}
-
-.container main .item-container {
   margin-bottom: 20px;
 }
-
-.container main .title-item {
-  text-transform: capitalize;
+main .item-container{
+  margin-bottom: 20px;
+}
+main .item-container .label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
   margin-bottom: 5px;
-}
-
-.container main .img-container {
-  background-color: var(--primary-base-color);
-  border: 1px dashed #ddd;
-  text-align: center;
-  align-items: center;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.container main .img-container button {
-  border: none;
-  color: var(--primary-medium-blue);
-}
-
-.container main .img-container button span {
   text-transform: capitalize;
+   display: block;
 }
-/* End img */
-
-/* End name */
-/*
-.container main .img-container p {
-  margin: 0;
-}
-
-.container main .img-container p:last-child {
-  font-size: 13px;
-}
-.container main .img-container p span {
-  text-transform: uppercase;
-}
-.container main .img-container p span:first-child {
-  color: var(--primary-medium-gray);
-}
-.container main .item-container input {
-  box-shadow: none;
-  outline: none;
-}
-/* End name */
-/* Start description */
-.container main .item-container textarea {
-  height: 80px;
-  resize: none;
-  line-height: 1.5;
-  outline: none;
-}
-/*
-.container main .item-container input,
-.container main .item-container textarea {
+main .item-container input{
+  width: 50%;
   padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all .3s ease;
   caret-color: var(--primary-medium-blue);
 }
-
-.container main .item-container input::placeholder,
-.container main .item-container textarea::placeholder {
-  color: var(--primary-medium-gray);
+main .item-container input:hover,
+main .item-container input:focus{
+  border-color: #008cba;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 140, 186, .3);
+}
+main .item-container .phone-text{
+  font-size: .9rem;
+  color: #555;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+main .btn-cancel,
+main .btn-back,
+main .btn-continue {
+  border-radius: 5px;
+  padding: 4px 12px;
+  transition: all 0.4s ease-in-out;
+  text-transform: capitalize;
 }
 
-.container main .item-container input:focus,
-.container main .item-container textarea:focus {
-
-  border-color: var(--primary-medium-blue);
+main .btn-cancel {
+  background-color: #d9534f;
+  color: #fff;
+  border: 1px solid #d9534f;
 }
 
-/* End description */
 
-/* Start slary & model section */
-/*
-.container main .title-item span {
-  text-transform: lowercase;
-}
-.container main .slary-model {
-  gap: 30px;
-}
-.container main .slary-model div {
-
-  width: 100%;
-}
-.container main .slary-model div input {
-
-  width: 100%;
-}
-.container main .slary-model div input:last-child {
-  align-self: flex-end;
+main .btn-back {
+  background-color: #008cba;
+  color: #fff;
+  border: 1px solid #008cba;
 }
 
-/* End slary & model section */
 
-/* Start category section  */
-/*
-.cat-container{
-  position: relative;
+main .btn-cancel:hover {
+  background-color: #f7c6c6;
+  color: #d9534f;
 }
 
-.cdk-overlay-container {
-  position: fixed;
+main .btn-continue {
+  margin-left: 5px;
+  background-color: white;
+  color: #008cba;
+  border: 1px solid #008cba;
 }
-/* End category section  */
+main .btn-back:hover {
+  background-color: #d6e8fa;
+  color: #008cba;
+}
+main .btn-continue:hover {
+  background-color: #d6e8fa;
+  color: #008cba;
+}
 
-/* Start Addrss section */
-/*
-.address-section .item-container input{
-  width: 25%;
-  transition: all .3s ease-in-out;
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
 
+  main h4.title {
+    font-size: 1.3rem;
+  }
+
+  main .item-container input[type="text"] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
 }
-.address-section .item-container input:focus{
-  width: 35%;
-}
-.phone-text {
-  color: var(--primary-medium-gray);
-  font-size: 12px;
-}
-/* End Addrss section */
-/* End main style */

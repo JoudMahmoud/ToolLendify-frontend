@@ -8,4 +8,5 @@
 footer
 {
   background-color: var(--primary-light-blue);
+  min-height: 30px;
 }

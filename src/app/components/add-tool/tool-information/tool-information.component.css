@@ -5,13 +5,25 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+main{
+  padding: 30px;
+  background-color: #f9f9f9;
+}
 .title {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
   text-transform: capitalize;
+  margin-bottom: 20px;
 }
 .item-container {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .item-container .label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
   text-transform: capitalize;
   display: block;
 }
@@ -19,38 +31,46 @@
   padding: 20px;
   background-color: var(--primary-base-color);
   border: 1px dashed #ddd;
+  border-radius: 10px;
   text-align: center;
-  border-radius: 8px;
+}
+.item-container .img-container i{
+  color: #333;
+  font-size: 1.2rem;
 }
 .item-container .img-container input {
   color: var(--primary-dark-blue);
   border: none;
-  width: auto;
-  padding-left: 60px;
+  width: 60%;
+  padding-left: 20px;
 }
-
-
 .item-container input,
 .item-container textarea {
-  border: 1px solid var(--primary-medium-gray);
-  outline: none;
+  width: 50%;
   padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
   caret-color: var(--primary-medium-blue);
-  border-radius: 6px;
 }
 .item-container input:focus,
-.item-container textarea:focus {
-  border-color: var(--primary-dark-blue);
+.item-container input:hover,
+.item-container textarea:focus,
+.item-container textarea:hover {
+  border-color: #008cba;
+  box-shadow: 0 0 5px rgba(0, 140, 186, 0.3);
 }
 .item-container input::placeholder,
 .item-container textarea::placeholder {
   color: #b2b2b2;
+  font-style: italic;
 }
 .item-container textarea {
   height: 80px;
 }
 .slary-model {
-  gap: 30px;
+  gap: 20px;
 }
 .slary-model div {
   width: 100%;
@@ -60,30 +80,50 @@
 }
 .slary-model div input {
   width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+main .btn-category{
+  padding: 8px 16px;
+  background-color: #0078a8;
+  color: #fff;
+  border-radius: 5px;
+}
+main .btn-category:hover{
+  background-color: #d6e8fa;
+  color: #008cba;
+  border-color: #008cba;
 }
 
-main .btn-category,
 main .btn-cancel,
 main .btn-back,
 main .btn-continue {
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 4px 12px;
   transition: all 0.4s ease-in-out;
   text-transform: capitalize;
 }
-main .btn-category,
-main .btn-cancel,
+
+main .btn-cancel {
+  background-color: #d9534f;
+  color: #fff;
+  border: 1px solid #d9534f;
+}
+
+
 main .btn-back {
   background-color: #008cba;
   color: #fff;
   border: 1px solid #008cba;
 }
 
-main .btn-cancel:hover,
-main .btn-category:hover {
-  background-color: #d6e8fa;
-  color: #008cba;
+
+main .btn-cancel:hover {
+  background-color: #f7c6c6;
+  color: #d9534f;
 }
+
+
 main .btn-continue {
   margin-left: 5px;
   background-color: white;
@@ -96,4 +136,5 @@ main .btn-back:hover {
 }
 main .btn-continue:hover {
   background-color: #d6e8fa;
+  color: #008cba;
 }
