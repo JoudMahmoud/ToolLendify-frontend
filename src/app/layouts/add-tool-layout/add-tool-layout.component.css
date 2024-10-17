@@ -5,29 +5,19 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-
 .container {
   max-width: 100%;
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
-.container .header{
+.container .header {
   position: sticky;
   top: 0;
 }
-.row {
-  flex-grow: 1; /* This will expand the row to fill the remaining space */
-  display: flex;
-}
-
 .side-bar {
-  background-color: #f4f5f7; /* Use your preferred sidebar background color */
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Sidebar shadow */
-  height: 100%; /* Take full height of the parent row */
+  background-color: #f4f5f7;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
 }
 
-.main {
-  flex-grow: 1;
-z-index: -100;
-}
