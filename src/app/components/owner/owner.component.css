@@ -3,8 +3,6 @@
   margin: 0;
 }
 
-.container {}
-
 .container ul {
   list-style: none;
 }
@@ -22,4 +20,10 @@
 .container ul li .info .address{
   font-size: 13px;
 }
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
 

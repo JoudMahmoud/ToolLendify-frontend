@@ -20,6 +20,7 @@ import { AddressInformationComponent } from './components/add-tool/address-infor
 import { ReviewComponent } from './components/add-tool/review/review.component';
 import { ToolInformationComponent } from './components/add-tool/tool-information/tool-information.component';
 import { AddToolLayoutComponent } from './layouts/add-tool-layout/add-tool-layout.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AddToolLayoutComponent } from './layouts/add-tool-layout/add-tool-layou
     AddressInformationComponent,
     ReviewComponent,
     AddToolLayoutComponent,
+    LandingPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideHttpClient()],

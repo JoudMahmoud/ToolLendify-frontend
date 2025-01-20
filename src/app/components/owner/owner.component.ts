@@ -5,19 +5,26 @@ import { SharedService } from '../../services/shared/shared.service';
 @Component({
   selector: 'app-owner',
   templateUrl: './owner.component.html',
-  styleUrl: './owner.component.css'
+  styleUrl: './owner.component.css',
 })
-export class OwnerComponent implements OnInit{
+export class OwnerComponent implements OnInit {
   owners: Owner[];
+  message: string = '';
+  styleMessage: boolean = false;
 
-  constructor(private sharedService:SharedService) {
+  constructor(private sharedService: SharedService) {
     this.owners = [];
   }
 
   ngOnInit(): void {
     this.sharedService.currentOwners.subscribe((owners: Owner[]) => {
-      this.owners = owners;
+      if (owners.length > 0) {
+        this.owners = owners;
+      } else {
+        this.owners = [];
+        this.message = 'Not found owner';
+        this.styleMessage = true;
+      }
     });
   }
-
 }

@@ -3,7 +3,7 @@
 
   <!-- Start img container -->
   <div class="item-container">
-    <label class="label" for="image">image</label>
+    <label class="label" for="image" >image</label>
 
     <div class="img-container w-50 text-center">
       <i class="fa fa-upload d-block"></i>
@@ -14,8 +14,10 @@
           id="image"
           name="image"
           accept="image/png, image/jpeg, image/jpg, image/pdf"
-
+          [(ngModel)]="addTool.image"
+          (change)="onToolPhotoSelected($event)"
         />
+
       </div>
 
       <!-- <p class="d-inline">or drag and drop</p> -->
@@ -36,6 +38,7 @@
       name="name"
       placeholder="Name tool"
       class="w-50"
+      [(ngModel)]="addTool.name"
     />
   </div>
   <!-- End Name container -->
@@ -49,6 +52,7 @@
       id="description"
       placeholder="Description tool"
       class="w-50"
+      [(ngModel)]="addTool.description"
     ></textarea>
   </div>
   <!-- End description -->
@@ -58,12 +62,12 @@
     <div>
       <label class="label" for="priceperday">price<span> per day</span></label>
 
-      <input type="text" id="priceperday" name="priceperday" />
+      <input type="text" id="priceperday" name="priceperday" [(ngModel)]="addTool.pricePerDay"/>
     </div>
     <div>
       <label class="label" for="model">model</label>
 
-      <input type="text" id="model" name="model" />
+      <input type="text" id="model" name="model" [(ngModel)]="addTool.model"/>
     </div>
   </div>
   <!-- End salary container -->
@@ -79,22 +83,25 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Dropdown button
+        select category
       </button>
 
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li *ngFor="let category of categories; let i = index">
+        <li *ngFor="let category of categories" (click)="selectCategory(category)">
           {{ category.name }}
         </li>
       </ul>
+    </div>
+    <div class="selected-category">
+      <strong>Selected Category: </strong> {{selectedCategoryName}}
     </div>
   </div>
 
   <div class="mt-5 d-flex justify-content-between w-50">
     <button class="btn-cancel">cancel</button>
     <div>
-      <button class="btn-back">back</button>
-      <button class="btn-continue">continue</button>
+      <button type="button" class="btn-back" disabled>back</button>
+      <button class="btn-continue" (click)="navigateContactPage()">continue</button>
     </div>
   </div>
   <!-- Start Category section -->

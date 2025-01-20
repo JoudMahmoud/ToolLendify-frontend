@@ -2,13 +2,7 @@
   margin: 0;
   padding: 0;
 }
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  height: 60px;
-}
-.nav::before {
+.parent::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -17,7 +11,7 @@
   top: 0px;
   z-index: 1000;
 }
-.nav::after {
+.parent::before::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -26,6 +20,17 @@
   bottom: 0px;
   left: 0px;
 }
+.title-link {
+  width: 170px;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 60px;
+}
+
 
 .nav nav .title {
   font-size: 25px;

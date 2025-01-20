@@ -1,4 +1,5 @@
-import { Address } from "./address";
+import { ContactInfo } from "./contact-info";
+
 
 export interface Tool {
   name: string;
@@ -7,10 +8,9 @@ export interface Tool {
   model: number;
   pricePerDay: number;
   isAvailable: boolean;
-  address: Address;
-  ownerId: string;
-  caregoryName: string;
+  ContactInfo: ContactInfo;
+  categoryName: string;
 
-  styleAvailable: boolean;
+  styleAvailable: boolean ;
   availableMessage: string;
 }

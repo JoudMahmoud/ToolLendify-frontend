@@ -21,6 +21,10 @@ export class UserAuthService {
     this.isLoggedSubject = new BehaviorSubject<boolean>(false);
   }
 
+  getToken(): string | null{
+    return localStorage.getItem('token') || sessionStorage.getItem('token');
+  }
+
   Register(
     userName: string,
     password: string,
@@ -36,7 +40,6 @@ export class UserAuthService {
     const loginData = { email, password, rememberMe };
     return this.httpClient.post<any>(`${this.url}/login`, loginData).pipe(
       map((response) => {
-        console.log('jj');
         const userToken = response.token;
 
         if (userToken) {
@@ -49,7 +52,6 @@ export class UserAuthService {
         }
       }),
       catchError((err) => {
-        console.log('joud login failed'); //it catch this error
         console.error('Login error: ', err);
         return throwError(
           () => new Error('Login failed. Please check your credentials.')

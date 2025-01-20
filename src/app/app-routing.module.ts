@@ -7,17 +7,19 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { OwnerComponent } from './components/owner/owner.component';
 import { ToolInformationComponent } from './components/add-tool/tool-information/tool-information.component';
 import { AddressInformationComponent } from './components/add-tool/address-information/address-information.component';
-import { ReviewComponent } from './components/add-tool/review/review.component';
 import { AddToolLayoutComponent } from './layouts/add-tool-layout/add-tool-layout.component';
+import { ReviewComponent } from './components/add-tool/review/review.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 const routes: Routes = [
   {
-    path: 'addtool', component: AddToolLayoutComponent,
+    path: 'addtool',
+    component: AddToolLayoutComponent,
     children: [
-      { path: 'tool-information', component: ToolInformationComponent },
-      { path: 'address-information', component: AddressInformationComponent },
-      {path:'review',component:ReviewComponent}
-    ]
+      { path: 'tool-info', component: ToolInformationComponent },
+      { path: 'address-info', component: AddressInformationComponent },
+      { path: 'check-info', component: ReviewComponent },
+    ],
   },
   {
     path: '',
@@ -30,6 +32,7 @@ const routes: Routes = [
   },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: LandingPageComponent },
   { path: '**', redirectTo: '' },
 ];
 

@@ -7,26 +7,32 @@ import { Category } from '../../../_models/category';
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrl: './side-bar.component.css'
+  styleUrl: './side-bar.component.css',
 })
-export class SideBarComponent implements OnInit{
+export class SideBarComponent implements OnInit {
   categories: Category[];
+  num: number = 0;
   constructor(private categoryService: CategoryService) {
     this.categories = [];
   }
-ngOnInit(): void {
-  this.getAllCategories();
-}
+
+  ngOnInit(): void {
+    this.getAllCategories();
+  }
+
   getAllCategories() {
+    this.categories = [];
     this.categoryService.getAllCategories().subscribe({
       next: (response: Category[]) => {
         this.categories = response;
-      }, error: (err) => {
+        this.num = this.categories.length;
+      },
+      error: (err) => {
         console.error('Error fetching tools ', err);
-      }, complete: () => {
+      },
+      complete: () => {
         console.log('Categories fetching complete.');
-      }
+      },
     });
   }
-
 }

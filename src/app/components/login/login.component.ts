@@ -25,6 +25,7 @@ export class LoginComponent {
   }
 
   Login() {
+    console.log('Remember me:', this.userLogin.rememberMe);
     this.authservice.Login(this.userLogin.email, this.userLogin.password, this.userLogin.rememberMe).subscribe({
       next: (respone) => {
         if (respone) {

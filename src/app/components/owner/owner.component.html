@@ -8,12 +8,12 @@
         />
         <div class="info pe-2">
         <p class="name">{{ owner.name }}</p>
-        <p class="address">{{owner.address}}dsfds</p>
+        <p class="address">{{owner.address}}</p>
         </div>
       </li>
     </ul>
   </div>
   <ng-template #noOwners>
-    <p>No owners found</p>
+    <p [ngClass]="{'error-message':styleMessage}">{{message}}</p>
   </ng-template>
 </div>

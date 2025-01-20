@@ -111,11 +111,6 @@ main .btn-cancel {
 }
 
 
-main .btn-back {
-  background-color: #008cba;
-  color: #fff;
-  border: 1px solid #008cba;
-}
 
 
 main .btn-cancel:hover {
@@ -129,10 +124,6 @@ main .btn-continue {
   background-color: white;
   color: #008cba;
   border: 1px solid #008cba;
-}
-main .btn-back:hover {
-  background-color: #d6e8fa;
-  color: #008cba;
 }
 main .btn-continue:hover {
   background-color: #d6e8fa;

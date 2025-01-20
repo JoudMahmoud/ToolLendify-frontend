@@ -1,38 +1,18 @@
 <main>
   <!-- Start Address section -->
   <div class="address-section">
-    <h4 class="title">addrees information</h4>
+    <h4 class="title">contact information</h4>
 
     <div class="item-container">
       <label class="label" for="street">street</label>
 
-      <input type="text" id="street" name="street" />
+      <input type="text" id="street" name="street" [(ngModel)]="contactInfo.address"/>
     </div>
 
-    <div class="item-container">
-      <label class="label" for="district">district</label>
-
-      <input type="text" id="district" name="district" />
-    </div>
-
-    <div class="item-container">
-      <label class="label" for="city">city</label>
-      <input type="text" id="city" name="city" />
-    </div>
-
-    <div class="item-container">
-      <label class="label" for="postal-code">postal code</label>
-      <input type="text" id="postal-code" name="postal-code" />
-    </div>
-
-    <div class="item-container">
-      <label class="label" for="country">country</label>
-      <input type="text" id="country" name="country" />
-    </div>
 
     <div class="item-container">
       <label class="label" for="phone">phone</label>
-      <input type="text" id="phone" name="phone" />
+      <input type="text" id="phone" name="phone" [(ngModel)]="contactInfo.phone"/>
       <p class="phone-text">
         Your phone number will stay private and won&#39;t be visible to other
         users for your security.
@@ -42,8 +22,8 @@
     <div class="mt-5 d-flex justify-content-between w-50">
       <button class="btn-cancel">cancel</button>
       <div>
-        <button class="btn-back">back</button>
-        <button class="btn-continue">continue</button>
+        <button class="btn-back" (click)="backToolInfoPage()">back</button>
+        <button class="btn-continue" (click)="navigateReviewPage()">continue</button>
       </div>
     </div>
   </div>

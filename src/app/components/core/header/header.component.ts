@@ -16,7 +16,12 @@ export class HeaderComponent {
   owners: Owner[];
   errorMassage: string;
 
-  constructor(private ownerService: OwnerService, private router: Router, private sharedService:SharedService,private authService: UserAuthService) {
+  constructor(
+    private ownerService: OwnerService,
+    private router: Router,
+    private sharedService: SharedService,
+    private authService: UserAuthService
+  ) {
     this.searchValue = '';
     this.owners = [];
     this.errorMassage = '';
@@ -25,18 +30,17 @@ export class HeaderComponent {
   getOwners(name: string) {
     this.ownerService.getOwnersByName(name).subscribe({
       next: (response: Owner[]) => {
-        if (response.length == 0 || !response) {
-          this.errorMassage = `Not found owner named ${name}`;
-          this.owners = [];
-        }
-        else {
-          this.owners = response;
-          this.sharedService.setOwners(this.owners);
-          this.router.navigate(['/owners']);
-
-        }
+        this.owners = response;
+        this.sharedService.setOwners(this.owners);
+        this.router.navigate(['/owners']);
       },
       error: (err) => {
+         if (err.status === 404) {
+           this.errorMassage = `No owner found with the name "${name}".`;
+           this.owners = [];
+           this.sharedService.setOwners(this.owners); // Set empty owners in shared service
+           this.router.navigate(['/owners']);
+         }
         console.error(`Error fetching owner`, err);
       },
       complete: () => {
@@ -47,8 +51,9 @@ export class HeaderComponent {
 
   logout() {
     this.authService.Logout();
-    this.router.navigate(['/login'])
-
-    }
-
+    this.router.navigate(['/login']);
+  }
+  navigateToAddToolPage() {
+    this.router.navigate(['/addtool/tool-info']);
+  }
 }

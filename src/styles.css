@@ -3,10 +3,16 @@
 :root {
   --primary-light-blue: #d8e5f9;
   --primary-medium-blue: #09abdc;
-  --primary-dark-blue: #0367a2;
+  --primary-dark-blue: #0c6797;
+  --primary-very-dark-blue:#050e50;
+
   /* --primary-blue: #008cba; */
   --primary-base-color: #f0f2f5;
   --primary-medium-gray: #a09fa4;
+
+  --primary-default-font: "Open Sans", sans-serif;;
+
+  --main-padding:90px;
 }
 
 .great-vibes-regular {
@@ -14,4 +20,5 @@
   font-weight: 400;
   font-style: normal;
 }
+
 

@@ -5,11 +5,12 @@ import { ToolService } from '../../services/tool/tool.service';
 @Component({
   selector: 'app-tool-list',
   templateUrl: './tool-list.component.html',
-  styleUrl: './tool-list.component.css',
+  styleUrls: ['./tool-list.component.css'],
 })
 export class ToolListComponent implements OnInit {
   toolList: Tool[];
   searchValue: string = '';
+ 
 
   // ==============================
   selectedTab: number = 0; // Default selected tab (0-based index)
@@ -34,8 +35,7 @@ export class ToolListComponent implements OnInit {
           availableMessage: tool.isAvailable ? 'Available' : 'Unavailable',
           styleAvailable: tool.isAvailable,
         }));
-    console.log(this.toolList);
-
+        console.log(this.toolList);
       },
       error: (err) => {
         console.error('Error fetching tools:', err);

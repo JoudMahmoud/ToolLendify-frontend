@@ -1,1 +1,55 @@
-<p>review works!</p>
+<div class="container-all">
+  <p class="heading">Review Your Tool</p>
+
+  <div class="container">
+    <form class="tool-form">
+      <div class="form-group image-section">
+        <img
+          [src]="toolInfo?.image"
+          alt="{{ toolInfo?.name }}"
+          class="tool-image"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <p>{{ toolInfo?.name }}</p>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <p>{{ toolInfo?.description }}</p>
+      </div>
+
+      <div class="form-group">
+        <label for="model">Model:</label>
+        <p>{{ toolInfo?.model }}</p>
+      </div>
+
+      <div class="form-group">
+        <label for="pricePerDay">Price Per Day:</label>
+        <p>{{ toolInfo?.pricePerDay }} EGP</p>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <p>{{ toolInfo?.ContactInfo?.address }}</p>
+      </div>
+
+      <button type="button" class="submit-btn" (click)="submitTool()">
+        Submit
+      </button>
+    </form>
+  </div>
+  <div *ngIf="styleSuccessForm" class="overlay">
+    <div
+      class="successe-container d-flex justify-content-center align-items-center flex-column"
+    >
+      <i class="fa fa-check-circle mb-4" aria-hidden="true"></i>
+      <p class="mb-3">tool updated successfully</p>
+      <button type="button" class="btn btn-primary" (click)="navigateToHome()">
+        ok
+      </button>
+    </div>
+  </div>
+</div>

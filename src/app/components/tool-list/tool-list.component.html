@@ -1,13 +1,16 @@
 <div
   class="container-search p-4 d-flex justify-content-between align-items-center"
 >
-  <form class="search-wrapper flex-grow-1" (keydown.enter)="getTool(searchValue)">
+  <form
+    class="search-wrapper flex-grow-1"
+    (keydown.enter)="getTool(searchValue)"
+  >
     <input
       class="search form-control p-1 pe-2 bg-light"
       type="search"
       placeholder="Search"
       aria-label="Search"
-     [(ngModel)]="searchValue"
+      [(ngModel)]="searchValue"
       name="searchValue"
     />
   </form>
@@ -29,41 +32,33 @@
 <!-- Tab Content Section -->
 <div class="tab-content" *ngIf="selectedTab === 0">
   <!-- <p>Content for Tab 1</p> -->
-  <div class="container row  ">
-    <div  class="col-lg-3" *ngFor="let item of toolList">
+  <div class="container row">
+    <div class="col-lg-3" *ngFor="let item of toolList">
       <div
-      class="card  m-2"
-
-
-      [ngClass]="item.isAvailable ? 'available' : 'un-available'"
-    >
-      <p
-        class="availability"
-        [ngClass]="item.isAvailable ? 'text-success' : 'text-warning'"
+        class="card m-2"
+        [ngClass]="item.isAvailable ? 'available' : 'un-available'"
       >
-        {{ item.availableMessage }}
-      </p>
-      <img
-        src="{{item.image}}"
-        class="card-img-top"
-        alt="..."
-      />
-
-      <div class="card-body">
-        <h5 class="card-title">{{ item.name }}</h5>
-        <p class="card-text description">
-          {{ item.description }}
-        </p>
-        <div
-          class="container-price pt-3 pb-2 ps-2 d-flex justify-content-between align-items-center"
+        <p
+          class="availability"
+          [ngClass]="item.isAvailable ? 'text-success' : 'text-warning'"
         >
-          <p class="d-flex">
-            <span> EGP</span>{{item.pricePerDay }}
+          {{ item.availableMessage }}
+        </p>
+        <img src="{{ item.image }}" class="card-img-top" alt="..." />
+
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text description">
+            {{ item.description }}
           </p>
-          <i class="fa fa-plus"></i>
+          <div
+            class="container-price pt-3 pb-2 ps-2 d-flex justify-content-between align-items-center"
+          >
+            <p class="d-flex"><span> EGP</span>{{ item.pricePerDay }}</p>
+            <i class="fa fa-plus"></i>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 
@@ -72,7 +67,7 @@
 
 <div class="tab-content" *ngIf="selectedTab === 1">
   <div class="container d-flex">
-    <div class="card " *ngFor="let item of toolList" style="width: 18rem">
+    <div class="card" *ngFor="let item of toolList" style="width: 18rem">
       <!-- <p *ngIf="item.isAvailable" class="is-available py-1 px-2">{{Available}}</p> -->
 
       <p
@@ -81,11 +76,7 @@
       >
         {{ item.availableMessage }}
       </p>
-      <img
-        src="{{item.image}}"
-        class="card-img-top"
-        alt="..."
-      />
+      <img src="{{ item.image }}" class="card-img-top" alt="..." />
 
       <div class="card-body">
         <h5 class="card-title">{{ item.name }}</h5>
@@ -95,9 +86,7 @@
         <div
           class="container-price pt-3 pb-2 ps-2 d-flex justify-content-between align-items-center"
         >
-          <p class="d-flex">
-            <span> EGP</span>{{ item.pricePerDay }}500
-          </p>
+          <p class="d-flex"><span> EGP</span>{{ item.pricePerDay }}500</p>
           <i class="fa fa-plus"></i>
         </div>
       </div>
